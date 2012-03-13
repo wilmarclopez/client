@@ -1,0 +1,75 @@
+Requests beginning [./cse473-p2]
+client[0xb7704b70]: start thread - index 0
+Client connected to address [127.0.0.1/9157], successful ...
+client[0xb7704b70]: before send (req 2) - index 0/client sock 3
+sent data :  :  0  0  0  2 
+sent data :  : 32  0 
+client[0xb6f03b70]: start thread - index 1
+Client connected to address [127.0.0.1/9157], successful ...
+client[0xb6f03b70]: before send (req 10) - index 1/client sock 4
+sent data :  :  0  0  0  3 
+sent data :  : 31 30  0 
+recv data :  :  0  1  0  5 
+recv data :  : 64 6F 6E 65  0 
+client[0xb7704b70]: after recv (req 2) - index 0/client sock 3
+client[0xb6702b70]: start thread - index 2
+Client connected to address [127.0.0.1/9157], successful ...
+client[0xb6702b70]: before send (req 3) - index 2/client sock 3
+sent data :  :  0  0  0  2 
+sent data :  : 33  0 
+client[0xb5f01b70]: start thread - index 3
+Client connected to address [127.0.0.1/9157], successful ...
+client[0xb5f01b70]: before send (req 3) - index 3/client sock 5
+sent data :  :  0  0  0  2 
+sent data :  : 33  0 
+client[0xb5700b70]: start thread - index 4
+Client connected to address [127.0.0.1/9157], successful ...
+client[0xb5700b70]: before send (req 8) - index 4/client sock 6
+sent data :  :  0  0  0  2 
+sent data :  : 38  0 
+client[0xb4effb70]: start thread - index 5
+Client connected to address [127.0.0.1/9157], successful ...
+client[0xb4effb70]: before send (req 10) - index 5/client sock 7
+sent data :  :  0  0  0  3 
+sent data :  : 31 30  0 
+client[0xb46feb70]: start thread - index 6
+Client connected to address [127.0.0.1/9157], successful ...
+client[0xb46feb70]: before send (req 1) - index 6/client sock 8
+sent data :  :  0  0  0  2 
+sent data :  : 31  0 
+client[0xb3efdb70]: start thread - index 7
+Client connected to address [127.0.0.1/9157], successful ...client[0xb36fcb70]: start thread - index 8
+Client connected to address [127.0.0.1/9157], successful ...
+client[0xb36fcb70]: before send (req 6) - index 8/client sock 10
+sent data :  :  0  0  0  2 
+sent data :  : 36  0 
+
+client[0xb3efdb70]: before send (req -10) - index 7/client sock 9
+sent data :  :  0  0  0  4 
+sent data :  : 2D 31 30  0 
+client[0xb2efbb70]: start thread - index 9
+Client connected to address [127.0.0.1/9157], successful ...
+client[0xb2efbb70]: before send (req 0) - index 9/client sock 11
+sent data :  :  0  0  0  2 
+sent data :  : 30  0 
+recv data :  :  0  1  0  5 
+recv data :  : 64 6F 6E 65  0 
+client[0xb6f03b70]: after recv (req 10) - index 1/client sock 4
+recv data :  :  0  1  0  5 
+recv data :  : 64 6F 6E 65  0 
+client[0xb6702b70]: after recv (req 3) - index 2/client sock 3
+recv data :  :  0  1  0  5 
+recv data :  : 64 6F 6E 65  0 
+client[0xb5f01b70]: after recv (req 3) - index 3/client sock 5
+recv data :  :  0  1  0  5 
+recv data :  : 64 6F 6E 65  0 
+client[0xb5700b70]: after recv (req 8) - index 4/client sock 6
+recv data :  :  0  1  0  5 
+recv data :  : 64 6F 6E 65  0 
+client[0xb4effb70]: after recv (req 10) - index 5/client sock 7
+recv data :  :  0  1  0  5 
+recv data :  : 64 6F 6E 65  0 
+client[0xb46feb70]: after recv (req 1) - index 6/client sock 8
+recv data :  :  0  1  0  5 
+recv data :  : 64 6F 6E 65  0 
+client[0xb3efdb70]: after recv (req -10) - index 7/client sock 9

@@ -1,3 +1,10 @@
+/**
+ * Resources:
+ * http://beej.us/guide/bgnet/output/html/multipage/index.html
+ * https://computing.llnl.gov/tutorials/pthreads/
+ * http://www.cse.psu.edu/~tjaeger/cse473-s08/cse473-s08-p2.html
+ */
+
 #include <cstdlib>
 #include <pthread.h>
 #include  <iostream>

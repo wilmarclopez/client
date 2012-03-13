@@ -1,0 +1,116 @@
+Preparing to serve requests [./cse473-pt-server]...
+Server binding to port [9157], successful ...
+recv data :  :  0  0  0  2 
+recv data :  : 32  0 
++++ worker thread[0xb77106c0]: server sock: 4; req: 2
+serverProcessReq[0xb77106c0]: check terminate before work - server sock: 4; req: 2
+serverProcessReq[0xb77106c0]: no terminate before work - server sock: 4; req: 2
+serverProcessReq[0xb77106c0]: do work - server sock: 4; req: 2
+====== work: 2 seconds =======
+--- serverProcessReq[0xb77106c0]: check terminate after work - server sock: 4; req: 2
+serverProcessReq[0xb77106c0]: no terminate after work - server sock: 4; req: 2
+serverProcessReq[0xb77106c0]: send response - server sock: 4; req: 2
+sent data :  :  0  1  0  5 
+sent data :  : 64 6F 6E 65  0 
+serverAddWork: finished setup work for server sock 4: 2
+recv data :  :  0  0  0  3 
+recv data :  : 31 30  0 
++++ worker thread[0xb77106c0]: server sock: 4; req: 10
+serverProcessReq[0xb77106c0]: check terminate before work - server sock: 4; req: 10
+serverProcessReq[0xb77106c0]: no terminate before work - server sock: 4; req: 10
+serverProcessReq[0xb77106c0]: do work - server sock: 4; req: 10
+====== work: 10 seconds =======
+--- serverProcessReq[0xb77106c0]: check terminate after work - server sock: 4; req: 10
+serverProcessReq[0xb77106c0]: no terminate after work - server sock: 4; req: 10
+serverProcessReq[0xb77106c0]: send response - server sock: 4; req: 10
+sent data :  :  0  1  0  5 
+sent data :  : 64 6F 6E 65  0 
+serverAddWork: finished setup work for server sock 4: 10
+recv data :  :  0  0  0  2 
+recv data :  : 33  0 
++++ worker thread[0xb77106c0]: server sock: 4; req: 3
+serverProcessReq[0xb77106c0]: check terminate before work - server sock: 4; req: 3
+serverProcessReq[0xb77106c0]: no terminate before work - server sock: 4; req: 3
+serverProcessReq[0xb77106c0]: do work - server sock: 4; req: 3
+====== work: 3 seconds =======
+--- serverProcessReq[0xb77106c0]: check terminate after work - server sock: 4; req: 3
+serverProcessReq[0xb77106c0]: no terminate after work - server sock: 4; req: 3
+serverProcessReq[0xb77106c0]: send response - server sock: 4; req: 3
+sent data :  :  0  1  0  5 
+sent data :  : 64 6F 6E 65  0 
+serverAddWork: finished setup work for server sock 4: 3
+recv data :  :  0  0  0  2 
+recv data :  : 33  0 
++++ worker thread[0xb77106c0]: server sock: 4; req: 3
+serverProcessReq[0xb77106c0]: check terminate before work - server sock: 4; req: 3
+serverProcessReq[0xb77106c0]: no terminate before work - server sock: 4; req: 3
+serverProcessReq[0xb77106c0]: do work - server sock: 4; req: 3
+====== work: 3 seconds =======
+--- serverProcessReq[0xb77106c0]: check terminate after work - server sock: 4; req: 3
+serverProcessReq[0xb77106c0]: no terminate after work - server sock: 4; req: 3
+serverProcessReq[0xb77106c0]: send response - server sock: 4; req: 3
+sent data :  :  0  1  0  5 
+sent data :  : 64 6F 6E 65  0 
+serverAddWork: finished setup work for server sock 4: 3
+recv data :  :  0  0  0  2 
+recv data :  : 38  0 
++++ worker thread[0xb77106c0]: server sock: 4; req: 8
+serverProcessReq[0xb77106c0]: check terminate before work - server sock: 4; req: 8
+serverProcessReq[0xb77106c0]: no terminate before work - server sock: 4; req: 8
+serverProcessReq[0xb77106c0]: do work - server sock: 4; req: 8
+====== work: 8 seconds =======
+--- serverProcessReq[0xb77106c0]: check terminate after work - server sock: 4; req: 8
+serverProcessReq[0xb77106c0]: no terminate after work - server sock: 4; req: 8
+serverProcessReq[0xb77106c0]: send response - server sock: 4; req: 8
+sent data :  :  0  1  0  5 
+sent data :  : 64 6F 6E 65  0 
+serverAddWork: finished setup work for server sock 4: 8
+recv data :  :  0  0  0  3 
+recv data :  : 31 30  0 
++++ worker thread[0xb77106c0]: server sock: 4; req: 10
+serverProcessReq[0xb77106c0]: check terminate before work - server sock: 4; req: 10
+serverProcessReq[0xb77106c0]: no terminate before work - server sock: 4; req: 10
+serverProcessReq[0xb77106c0]: do work - server sock: 4; req: 10
+====== work: 10 seconds =======
+--- serverProcessReq[0xb77106c0]: check terminate after work - server sock: 4; req: 10
+serverProcessReq[0xb77106c0]: no terminate after work - server sock: 4; req: 10
+serverProcessReq[0xb77106c0]: send response - server sock: 4; req: 10
+sent data :  :  0  1  0  5 
+sent data :  : 64 6F 6E 65  0 
+serverAddWork: finished setup work for server sock 4: 10
+recv data :  :  0  0  0  2 
+recv data :  : 31  0 
++++ worker thread[0xb77106c0]: server sock: 4; req: 1
+serverProcessReq[0xb77106c0]: check terminate before work - server sock: 4; req: 1
+serverProcessReq[0xb77106c0]: no terminate before work - server sock: 4; req: 1
+serverProcessReq[0xb77106c0]: do work - server sock: 4; req: 1
+====== work: 1 seconds =======
+--- serverProcessReq[0xb77106c0]: check terminate after work - server sock: 4; req: 1
+serverProcessReq[0xb77106c0]: no terminate after work - server sock: 4; req: 1
+serverProcessReq[0xb77106c0]: send response - server sock: 4; req: 1
+sent data :  :  0  1  0  5 
+sent data :  : 64 6F 6E 65  0 
+serverAddWork: finished setup work for server sock 4: 1
+recv data :  :  0  0  0  4 
+recv data :  : 2D 31 30  0 
+serverProcessReq[0xb77106c0]: check terminate before work - server sock: 4; req: 0
+serverProcessReq[0xb77106c0]: no terminate before work - server sock: 4; req: 0
+serverProcessReq[0xb77106c0]: do work - server sock: 4; req: 0
+====== work: 0 seconds =======
+--- serverProcessReq[0xb77106c0]: check terminate after work - server sock: 4; req: 0
+serverProcessReq[0xb77106c0]: no terminate after work - server sock: 4; req: 0
+serverProcessReq[0xb77106c0]: send response - server sock: 4; req: 0
+sent data :  :  0  1  0  5 
+sent data :  : 64 6F 6E 65  0 
+serverAddWork: finished setup work for server sock 4: -10
+recv data :  :  0  0  0  2 
+recv data :  : 30  0 
+serverProcessReq[0xb77106c0]: check terminate before work - server sock: 4; req: 0
+serverProcessReq[0xb77106c0]: no terminate before work - server sock: 4; req: 0
+serverProcessReq[0xb77106c0]: do work - server sock: 4; req: 0
+====== work: 0 seconds =======
+--- serverProcessReq[0xb77106c0]: check terminate after work - server sock: 4; req: 0
+serverProcessReq[0xb77106c0]: no terminate after work - server sock: 4; req: 0
+serverProcessReq[0xb77106c0]: send response - server sock: 4; req: 0
+sent data :  :  0  1  0  5 
+sent data :  : 64 6F 6E 65  0 
