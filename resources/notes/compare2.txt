@@ -1,0 +1,21 @@
+if (p == NULL)  {
+	fprintf(stderr, "server: failed to bind\n");
+	return 2;
+}
+
+freeaddrinfo(servinfo); // all done with this structure
+
+if (listen(sockfd, BACKLOG) == -1) {
+	perror("listen");
+	exit(1);
+}
+
+sa.sa_handler = sigchld_handler; // reap all dead processes
+sigemptyset(&sa.sa_mask);
+sa.sa_flags = SA_RESTART;
+if (sigaction(SIGCHLD, &sa, NULL) == -1) {
+	perror("sigaction");
+	exit(1);
+}
+
+printf("server: waiting for connections...\n");

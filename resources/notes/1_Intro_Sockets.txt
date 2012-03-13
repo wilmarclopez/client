@@ -1,0 +1,48 @@
+Sockets - file descriptors
+	- everything in Unix is a file
+	- use socket() to get the descriptor
+	- send() and recv(); read() and write() can also be used but have limited capacbility
+	- there are different kinds of sockets
+===========================
+
+Two types of Internet sockets
+1. Stream sockets
+	- SOCK_STREAM
+	- connection-oriented: data arrives as they are sent and "error-free"
+	- high-quality using "Transmission Control Protocol(TCP)"
+	- IP or "Internet protocol" is the routing and not responsible for data integrity
+	
+	
+2. Datagram sockets
+	- SOCK_DGRAM
+	- connectionless sockets: "unreliable", may arrive, may arrive out of order but data within the packet is error-free
+	- uses IP for routing but uses UDP ("User datagram protocol") instead
+	- build packet, put IP header, send it out
+	- used when dropped packets are ok but tftp and others use another protocol that includes ACK messages
+	- unreliable but remedied by other protocols BUT is very fast: fire-and-forget
+
+============================
+Network theory and data encapsulation
+- A packet is composed of the data and the protocol wrappers/headers/footers
+- ISO/OSI Model: can write socket programs without caring how the data is physically transmitted
+
+OSI/ISO (very very general)
+1. Application - 
+2. Presentation
+3. Session
+4. Transport - 
+5. Network
+6. Data link
+7. Physical - hardware: serial, Ethernet
+
+Unix layered model:
+1. Application layer - ex. telnet, ftp
+2. Host-to-host transport layer - TCP, UDP
+3. Internet layer - IP and routing
+4. Network access layer - Ethernet, wifi
+
+In application (Unix):
+1. Stream sockets : send() the data out
+2. Datagram sockets: encapsulate in the method of your choosing, sendto() it out
+* kernel builds the transport layer and internet layer
+

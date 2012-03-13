@@ -1,0 +1,40 @@
+SERVER
+1. getaddrinfo(); - your own address (in hints) and desired port
+	memset(&hints, 0, sizeof hints);
+	hints.ai_family = AF_UNSPEC;  // use IPv4 or IPv6, whichever
+	hints.ai_socktype = SOCK_STREAM;
+	hints.ai_flags = AI_PASSIVE;     // fill in my IP for me
+
+	getaddrinfo(NULL, "3490", &hints, &res);
+2. socket(); - Define the socket type using socket() and receive a "socket descriptor (SD)"
+3. bind(); - the socket using its SD to the machine's port number
+			- setsockopt() can be used to reuse a port
+4. listen(); - listen() to the port and specify queue size of messages
+5. accept(); - accepts connect()s then creates new SDs to recv() and send()
+			- original SD/port is still listening for connection requests
+			- also returns a socketaddr* which contains their address
+	* close(); - can be called if max number of connections are reached on the listening SD
+	* shutdown(); - more sophisticated but will not close() unconnected datagrams
+	
+=== Stream or connect()ed datagram sockets
+6. send(); - send to accepted SD and returns number of bytes sent
+			- less than 1K of packet will most probably be sent without overflow
+7. recv(); - receives data from a buffer in the accepted SD
+			- returns number of bytes received and read into the buffer
+			- when 0, host already close()d its connection
+			
+=== Un-connect()ed datagram sockets - destination info should be provided
+6. sendto(); - additional "sockaddr *to" and its length
+7. recvfrom(); - just like recv() but with 2 additional params like sendto()
+	* if SD is connect()ed, it can use send() and recv() -> connection or unconnection
+		is not binded in the socket (well, it's done for us)
+	
+* getaddrinfo() is a helper function that 
+	1. finds addrinfo of hosts
+	1. creates an addinfo for your computer
+		- returned info can be used to create sockets and binds
+		- type of aaddrinfo returned is based on the 'hints' parameter which is copied to the resulting list of addrinfo's
+		
+HOST
+	- you don't have to bind() since you're only concerned with the remote port
+	- connect() will bind you to an unused port automatically to a server's listen()ing port

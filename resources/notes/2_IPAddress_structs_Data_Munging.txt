@@ -1,0 +1,121 @@
+IP address version 4
+	- four bytes or "octets": 32 bytes 
+	- written in dots and numbers like 192.0.2.111
+
+IP address version 6
+	- 128 bytes of address
+	- hexadecimal representation, 2-byte chunk separated by a colon like 2001:0db8:c9d2:aee5:73e3:934a:a5ae:9551
+	- leading zeros for each byte pair can be left blank. The ff pairs are equivalent
+
+		2001:0db8:c9d2:0012:0000:0000:0000:0051
+		2001:db8:c9d2:12::51
+
+		2001:0db8:ab00:0000:0000:0000:0000:0000
+		2001:db8:ab00::
+
+		0000:0000:0000:0000:0000:0000:0000:0001
+		::1
+
+		* ::1 is the "loopback address" like 127.0.0.1
+	- IPv4 compatibility: prepend "::fff:" like ::ffff:192.0.2.33
+	
+note: 
+	- 1 byte = 8 bits
+			= 0 to 255, inclusively
+			= 2 digit hex number e.g. FF
+	- 255 dec = FF hex
+===========================================================
+
+Subnets (Subnetwork)
+	- for organizational purposes, IPs are divided into "network portion" and "host portion"
+	- Network portion: first N bytes, Host portion: remaining bytes
+	- e.g. 192.0.10.12 = 192.0.10.0 is the network ip, and this is the 12th (host) address in this subnet
+	- before subnets have Class A (1 : 3), B (2 : 2), C (3 : 1)	
+	- "Netmask" - describes the network portion by ANDing it with the IP e.g. 255.255.255.0
+		- a bunch of 1's followed by 0's
+		- number of 1's is not necessarilly 8, 16, or 24 e.g. 255.255.255.252 = 30 bits of network
+	- new form (IP)/(# host bits) e.g. 192.0.10.20/30 = ip address 192.0.10.20 has subnet dsecribed by first 30 bits
+		- same goes with IPv6
+		
+===========================================================
+
+Port Numbers
+	- Internet layer : IP address, Host-to-host Transport layer (UDP and TCP) : Port numbers 
+	
+notes: 
+	Port - is in the transport layer and is a logical end-to-end point
+	Sockets - more fine grained
+		- is in the application layer
+		- determined by an IP address and a port number
+	* Socket to port : many-to-one
+	* Each port can have a single passive socket, awaiting incoming connections, and multiple active sockets, each corresponding to an open connection on the port.
+	
+===========================================================
+
+Byte order
+	1. Big-Endian/Network Byte Order - Hex number b34f is stored as byte b3 and byte 4f
+	2. Little-Endian/Host Byte Order - Hex number b34f is stored as byte 4f and byte b3 (reversed)
+			- assume that the endianness of your computer is NOT correct so you always pass it to a function
+				that does the conversion if needed (the ff are not limited to):
+			
+	htons()		host to network short (2 bytes)
+	htonl()		host to network long	(4 bytes)
+	ntohs()		network to host short
+	ntohl()		network to host long		
+	
+===========================================================
+
+Structs
+	1. Socket descriptor - int
+	2. struct addrinfo - Socket address structure 
+		- it is a node with *ai_next
+		- returned by getaddrinfo() - a linked list of struct addrinfo
+		- filled-in for users but needed to be peeked-into
+		a. ai_family - IPv4 or IPv6 or AF_UNSPEC
+		b. struct sockaddr *ai_addr; 
+			- holds socket address information
+			
+	Summary:
+		+ struct addrinfo
+			+ struct sockaddr
+			> struct sockaddr_storage
+				> struct sockaddr_in
+				> struct sockaddr_in6
+	Legends: 
+		+ inside
+		> can be casted to
+		
+===========================================================
+
+IP addresses, Part Deux
+	- there are helper functions that convert strings to be used by the sockaddr structs
+	- inet_pton() : "printable to network"
+		struct sockaddr_in sa; // IPv4
+		struct sockaddr_in6 sa6; // IPv6
+
+		inet_pton(AF_INET, "192.0.2.1", &(sa.sin_addr)); // IPv4
+		inet_pton(AF_INET6, "2001:db8:63b3:1::3490", &(sa6.sin6_addr)); // IPv6
+		
+	- helper function to print the other way arround: inet_ntop()
+		// IPv4:
+		char ip4[INET_ADDRSTRLEN];  // space to hold the IPv4 string
+		struct sockaddr_in sa;      // pretend this is loaded with something
+
+		inet_ntop(AF_INET, &(sa.sin_addr), ip4, INET_ADDRSTRLEN);
+
+		printf("The IPv4 address is: %s\n", ip4);
+
+
+		// IPv6:
+		char ip6[INET6_ADDRSTRLEN]; // space to hold the IPv6 string
+		struct sockaddr_in6 sa6;    // pretend this is loaded with something
+
+		inet_ntop(AF_INET6, &(sa6.sin6_addr), ip6, INET6_ADDRSTRLEN);
+
+		printf("The address is: %s\n", ip6);
+		
+===========================================================
+Private (Or Disconnected) Networks
+	- Network Address Translation (NAT) translates "internal address" to "external/public" ones
+	- NATing firewalls hide entire networks behind them with IP addresses of the form
+		10.x.x.x, 192.168.x.x, 172.y.x.x; x is 0-255, y 16-31
