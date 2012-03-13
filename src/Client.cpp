@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 		return -1;
 	}
 	
-	int mainSocket = comm->connectClient(argv[1], atoi(argv[2]));
+	int mainSocket = comm->connectClient(argv[1], argv[2]);
 	tp.initializeThreads();
 	
 }
